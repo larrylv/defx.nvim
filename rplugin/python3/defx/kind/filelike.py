@@ -281,11 +281,11 @@ class Kind(Base):
 
             # bufnr check
             winids = []
-            try:
-                bufnr = view._vim.call('bufnr', f'^{path}$')
-                winids = view._vim.call('win_findbuf', bufnr)
-            except NvimError:
-                pass
+            # try:
+            #     bufnr = view._vim.call('bufnr', f'^{path}$')
+            #     winids = view._vim.call('win_findbuf', bufnr)
+            # except NvimError:
+            #     pass
 
             if winids:
                 view._vim.call('win_gotoid', winids[0])
